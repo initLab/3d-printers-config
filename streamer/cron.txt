@@ -1,0 +1,2 @@
+@reboot screen -dmS mendel /home/streamer/start.sh mendel 1024x768 8001
+@reboot screen -dmS i3mega /home/streamer/start.sh i3mega 640x480 8002

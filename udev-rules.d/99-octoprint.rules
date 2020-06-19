@@ -1,0 +1,4 @@
+# RepRap Mono Mendel - Logitech, Inc. Webcam C170
+KERNEL=="video[0-9]*", SUBSYSTEM=="video4linux", ATTR{index}=="0", ATTRS{idVendor}=="046d", ATTRS{idProduct}=="082b", SYMLINK+="video-mendel"
+# Anycube i3 Mega - Logitech, Inc. Webcam C200
+KERNEL=="video[0-9]*", SUBSYSTEM=="video4linux", ATTR{index}=="0", ATTRS{idVendor}=="046d", ATTRS{idProduct}=="0802", ATTRS{serial}=="6A03A370", SYMLINK+="video-i3mega"

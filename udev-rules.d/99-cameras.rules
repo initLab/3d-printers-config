@@ -1,0 +1,6 @@
+# RepRap Mono Mendel - FTDI FT232R USB UART
+KERNEL=="ttyUSB[0-9]*", SUBSYSTEM=="tty", ATTRS{idVendor}=="0403", ATTRS{idProduct}=="6001", ATTRS{serial}=="A7031ZI1", GROUP="octoprint.mendel"
+# Anycube i3 Mega - Silicon Labs CP2102 USB to UART Bridge Controller
+KERNEL=="ttyUSB[0-9]*", SUBSYSTEM=="tty", ATTRS{idVendor}=="10c4", ATTRS{idProduct}=="ea60", GROUP="octoprint.i3mega"
+# Anet A8 - USB2.0-Serial (CH341)
+KERNEL=="ttyUSB[0-9]*", SUBSYSTEM=="tty", ATTRS{idVendor}=="1a86", ATTRS{idProduct}=="7523", GROUP="octoprint.a8"
