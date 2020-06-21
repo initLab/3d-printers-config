@@ -1,0 +1,174 @@
+accessControl:
+    enabled: false
+appearance:
+    closeModalsWithClick: false
+    color: black
+    name: Mendel - init Lab
+plugins:
+    _disabled:
+    - announcements
+    - tracking
+    - appkeys
+    - discovery
+    - errortracking
+    - virtual_printer
+    announcements:
+        _config_version: 1
+        channels:
+            _blog:
+                read_until: 1589460900
+            _important:
+                read_until: 1521111600
+            _octopi:
+                read_until: 1573722900
+            _plugins:
+                read_until: 1592110800
+            _releases:
+                read_until: 1583322300
+        enabled_channels:
+        - _important
+    psucontrol:
+        _config_version: 3
+        disconnectOnPowerOff: true
+        enablePseudoOnOff: true
+        offSysCommand: 'curl -sX PUT -H "Accept: application/json" http://172.31.190.xx/api/relay/0
+            --data "apikey=xxx&value=0"'
+        onSysCommand: 'curl -sX PUT -H "Accept: application/json" http://172.31.190.xx/api/relay/0
+            --data "apikey=xxx&value=1"'
+        senseSystemCommand: curl -s 'http://172.31.190.xx/api/relay/0?apikey=xxx'
+            | grep -q 1
+        sensingMethod: SYSTEM
+        switchingMethod: SYSTEM
+    softwareupdate:
+        _config_version: 7
+    telegram:
+        _config_version: 4
+        chats:
+            '-1001214843381':
+                accept_commands: true
+                allow_users: true
+                commands:
+                    /abort: false
+                    /con: false
+                    /ctrl: false
+                    /dontshutup: true
+                    /filament: false
+                    /files: false
+                    /gif: true
+                    /help: false
+                    /print: false
+                    /settings: false
+                    /shutup: true
+                    /status: true
+                    /supergif: true
+                    /sys: false
+                    /test: false
+                    /togglepause: false
+                    /tune: false
+                    /upload: false
+                    /user: true
+                    'No': false
+                    'Yes': false
+                id: '-1001214843381'
+                image: /plugin/telegram/img/static/group.jpg
+                new: false
+                newUsr: false
+                notifications:
+                    PrintDone: true
+                    PrintFailed: true
+                    PrintPaused: true
+                    PrintResumed: true
+                    PrintStarted: true
+                    PrinterShutdown: true
+                    PrinterStart: true
+                    StatusNotPrinting: false
+                    StatusPrinting: false
+                    ZChange: true
+                private: false
+                send_notifications: true
+                title: init Lab 3D Printing
+                type: SUPERGROUP
+            '102104618':
+                accept_commands: true
+                allow_users: false
+                commands:
+                    /abort: true
+                    /con: true
+                    /ctrl: true
+                    /dontshutup: true
+                    /filament: true
+                    /files: true
+                    /gif: true
+                    /help: false
+                    /print: true
+                    /settings: true
+                    /shutup: true
+                    /status: true
+                    /supergif: true
+                    /sys: true
+                    /test: false
+                    /togglepause: true
+                    /tune: true
+                    /upload: true
+                    /user: true
+                    'No': false
+                    'Yes': false
+                id: '102104618'
+                image: /plugin/telegram/img/static/default.jpg
+                new: false
+                newUsr: false
+                notifications:
+                    PrintDone: false
+                    PrintFailed: false
+                    PrintPaused: false
+                    PrintResumed: false
+                    PrintStarted: false
+                    PrinterShutdown: false
+                    PrinterStart: false
+                    StatusNotPrinting: false
+                    StatusPrinting: false
+                    ZChange: false
+                private: true
+                send_notifications: false
+                title: Венцислав - Атанасов - @Slackware
+                type: PRIVATE
+        fileOrder: true
+        messages:
+            StatusPrinting:
+                combined: true
+        token: xxx
+    tracking:
+        enabled: false
+        events:
+            commerror: false
+            plugin: false
+            pong: false
+            printer: false
+            printer_safety_check: false
+            printjob: false
+            slicing: false
+            startup: false
+            throttled: false
+            update: false
+printerProfiles:
+    default: _default
+serial:
+    baudrate: 115200
+    port: /dev/ttyUSB-mendel
+server:
+    commands:
+        serverRestartCommand: ~/restart.sh &
+    onlineCheck:
+        enabled: false
+    pluginBlacklist:
+        enabled: true
+temperature:
+    profiles:
+    -   bed: 80
+        chamber: null
+        extruder: 210
+        name: PLA
+webcam:
+    snapshot: http://127.0.0.1:8080/snapshot.jpeg
+    stream: /streamer/mendel/stream.mjpeg
+    streamRatio: '4:3'

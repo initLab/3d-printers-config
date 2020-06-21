@@ -1,0 +1,1 @@
+@reboot /home/octoprint.mendel/start.sh
