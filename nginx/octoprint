@@ -1,0 +1,78 @@
+map $http_upgrade $connection_upgrade {
+	default upgrade;
+	'' close;
+}
+
+upstream "octoprint-mendel" {
+	server 127.0.0.1:5000;
+}
+
+upstream "octoprint-i3mega" {
+	server 127.0.0.1:5001;
+}
+
+upstream "streamer-mendel" {
+	server 127.0.0.1:8080;
+}
+
+upstream "streamer-i3mega" {
+	server 127.0.0.1:8081;
+}
+
+server {
+	listen 80 default_server;
+	listen [::]:80 default_server;
+
+	root /home/web/public;
+
+	index index.html index.htm;
+
+	server_name _;
+
+	location / {
+		try_files $uri $uri/ =404;
+	}
+
+	location /mendel/ {
+		proxy_pass http://octoprint-mendel/;
+		proxy_set_header Host $http_host;
+		proxy_set_header Upgrade $http_upgrade;
+		proxy_set_header Connection $connection_upgrade;
+		proxy_set_header X-Real-IP $remote_addr;
+		proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+		proxy_set_header X-Scheme $scheme;
+		proxy_set_header X-Script-Name /mendel;
+		proxy_http_version 1.1;
+
+		client_max_body_size 0;
+	}
+
+	location /i3mega/ {
+		proxy_pass http://octoprint-i3mega/;
+		proxy_set_header Host $http_host;
+		proxy_set_header Upgrade $http_upgrade;
+		proxy_set_header Connection $connection_upgrade;
+		proxy_set_header X-Real-IP $remote_addr;
+		proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+		proxy_set_header X-Scheme $scheme;
+		proxy_set_header X-Script-Name /i3mega;
+		proxy_http_version 1.1;
+
+		client_max_body_size 0;
+	}
+
+	location /streamer/mendel/ {
+		set $args '';
+		proxy_pass http://streamer-mendel/;
+	}
+
+	location /streamer/i3mega/ {
+		set $args '';
+		proxy_pass http://streamer-i3mega/;
+	}
+
+	location = /streamer/i3mega/snapshot.jpeg {
+		root /tmp;
+		try_files /snapshot-i3mega.jpeg =404;
+	}
+}
