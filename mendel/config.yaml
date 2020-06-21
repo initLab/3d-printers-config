@@ -169,6 +169,6 @@ temperature:
         extruder: 210
         name: PLA
 webcam:
-    snapshot: http://127.0.0.1:8080/snapshot.jpeg
+    snapshot: http://127.0.0.1/streamer/mendel/snapshot.jpeg
     stream: /streamer/mendel/stream.mjpeg
     streamRatio: '4:3'

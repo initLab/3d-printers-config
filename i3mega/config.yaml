@@ -158,6 +158,6 @@ temperature:
         extruder: 205
         name: PLA
 webcam:
-    snapshot: http://127.0.0.1:8081/snapshot.jpeg
+    snapshot: http://127.0.0.1/streamer/i3mega/snapshot.jpeg
     stream: /streamer/i3mega/stream.mjpeg
     streamRatio: '4:3'
