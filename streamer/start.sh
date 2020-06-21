@@ -1,9 +1,9 @@
 #!/bin/bash
 
-PROG=/home/streamer/uvc-streamer/uvc_stream
-
 while [ 1 ]
 do
-	$PROG --device "/dev/video-$1" --resolution "$2" --fps 30 -q 95 --port "$3"
+	DEVICE="/dev/video-$1"
+	shift
+	~/uvc-streamer/uvc_stream --device "${DEVICE}" "$@"
 	sleep 1
 done
