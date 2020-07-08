@@ -41,7 +41,7 @@ plugins:
                     /ctrl: false
                     /dontshutup: true
                     /filament: false
-                    /files: false
+                    /files: true
                     /gif: true
                     /help: false
                     /print: false
@@ -120,12 +120,13 @@ plugins:
                 send_notifications: false
                 title: Венцислав - Атанасов - @Slackware
                 type: PRIVATE
-        debug: true
         fileOrder: true
         messages:
             StatusPrinting:
                 combined: true
         token: xxx
+    themeify:
+        theme: discoranged
     tracking:
         enabled: false
         events:
@@ -142,11 +143,13 @@ plugins:
 printerProfiles:
     default: _default
 serial:
+    autoconnect: true
     baudrate: 250000
     port: /dev/ttyUSB-i3mega
 server:
     commands:
-        serverRestartCommand: ./restart.sh &
+        serverRestartCommand: ~/restart.sh &
+    firstRun: false
     onlineCheck:
         enabled: false
     pluginBlacklist:
