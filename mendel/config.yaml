@@ -2,7 +2,8 @@ accessControl:
     enabled: false
 appearance:
     closeModalsWithClick: false
-    color: black
+    color: red
+    colorTransparent: true
     name: Mendel - init Lab
 plugins:
     _disabled:
@@ -39,6 +40,8 @@ plugins:
             | grep -q 1
         sensingMethod: SYSTEM
         switchingMethod: SYSTEM
+    slic3r:
+        slic3r_engine: /usr/bin/slic3r-prusa3d
     softwareupdate:
         _config_version: 7
     telegram:
@@ -137,6 +140,15 @@ plugins:
             StatusPrinting:
                 combined: true
         token: xxx
+    themeify:
+        color:
+        -   deletable: false
+            enabled: true
+            rule: background
+            selector: .navbar-inner
+            value: rgba(255, 70, 70, .3)
+        enableCustomization: true
+        theme: discoranged
     tracking:
         enabled: false
         events:
@@ -153,11 +165,13 @@ plugins:
 printerProfiles:
     default: _default
 serial:
+    autoconnect: true
     baudrate: 115200
     port: /dev/ttyUSB-mendel
 server:
     commands:
         serverRestartCommand: ~/restart.sh &
+    firstRun: false
     onlineCheck:
         enabled: false
     pluginBlacklist:
