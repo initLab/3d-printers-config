@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Logitech C200 camera produces JPEG files without Huffman tables
-URL=http://127.0.0.1:8081/snapshot.jpeg
+URL=http://127.0.0.1:8082/snapshot.jpeg
 FILENAME=/tmp/snapshot-i3mega.jpeg
 
 # Comment these two to enable debugging
