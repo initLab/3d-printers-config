@@ -28,10 +28,7 @@ plugins:
                 read_until: 1594206900
         enabled_channels:
         - _important
-    discovery:
-        upnpUuid: 22792b30-da29-444b-bc78-6edc82ac5eca
     errortracking:
-        unique_id: 35aab4b3-eb01-4799-8a8d-893b32accd41
     psucontrol:
         _config_version: 3
         disconnectOnPowerOff: true
@@ -50,17 +47,106 @@ plugins:
         _config_version: 7
     telegram:
         _config_version: 4
-        chats: {}
+        chats:
+            '-1001214843381':
+                accept_commands: true
+                allow_users: true
+                commands:
+                    /abort: false
+                    /con: false
+                    /ctrl: false
+                    /dontshutup: true
+                    /filament: false
+                    /files: true
+                    /gif: true
+                    /help: false
+                    /print: false
+                    /settings: false
+                    /shutup: true
+                    /status: true
+                    /supergif: true
+                    /sys: false
+                    /test: false
+                    /togglepause: false
+                    /tune: false
+                    /upload: false
+                    /user: true
+                    'No': false
+                    'Yes': false
+                id: '-1001214843381'
+                image: /plugin/telegram/img/static/group.jpg
+                new: false
+                newUsr: false
+                notifications:
+                    PrintDone: true
+                    PrintFailed: true
+                    PrintPaused: true
+                    PrintResumed: true
+                    PrintStarted: true
+                    PrinterShutdown: true
+                    PrinterStart: true
+                    StatusNotPrinting: false
+                    StatusPrinting: false
+                    ZChange: true
+                private: false
+                send_notifications: true
+                title: init Lab 3D Printing
+                type: SUPERGROUP
+            '102104618':
+                accept_commands: true
+                allow_users: false
+                commands:
+                    /abort: true
+                    /con: true
+                    /ctrl: true
+                    /dontshutup: true
+                    /filament: true
+                    /files: true
+                    /gif: true
+                    /help: false
+                    /print: true
+                    /settings: true
+                    /shutup: true
+                    /status: true
+                    /supergif: true
+                    /sys: true
+                    /test: false
+                    /togglepause: true
+                    /tune: true
+                    /upload: true
+                    /user: true
+                    'No': false
+                    'Yes': false
+                id: '102104618'
+                image: /plugin/telegram/img/static/default.jpg
+                new: false
+                newUsr: false
+                notifications:
+                    PrintDone: false
+                    PrintFailed: false
+                    PrintPaused: false
+                    PrintResumed: false
+                    PrintStarted: false
+                    PrinterShutdown: false
+                    PrinterStart: false
+                    StatusNotPrinting: false
+                    StatusPrinting: false
+                    ZChange: false
+                private: true
+                send_notifications: false
+                title: Венцислав - Атанасов - @Slackware
+                type: PRIVATE
         messages:
             StatusPrinting:
                 combined: true
+        token: SECRET
     themeify:
         color:
         -   deletable: false
             enabled: true
             rule: background
             selector: .navbar-inner
-            value: gray
+            value: '#a6a6a6'
         enableCustomization: true
         theme: discoranged
     tracking:
@@ -77,9 +163,8 @@ plugins:
             throttled: false
             update: false
 printerProfiles:
-    default: _default
+    default: a8_-_init_lab
 serial:
-    autoconnect: true
     baudrate: 115200
     port: /dev/ttyUSB-a8
 server:
