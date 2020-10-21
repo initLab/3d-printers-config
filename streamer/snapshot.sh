@@ -1,8 +1,11 @@
 #!/bin/bash
 
 # Logitech C200 camera produces JPEG files without Huffman tables
-URL=http://127.0.0.1:8082/snapshot.jpeg
-FILENAME=/tmp/snapshot-i3mega.jpeg
+# Logitech QuickCam Pro 5000 seems to do something similar
+PORT="${1}"
+NAME="${2}"
+URL=http://127.0.0.1:"${PORT}"/snapshot.jpeg
+FILENAME=/tmp/snapshot-"${NAME}".jpeg
 
 # Comment these two to enable debugging
 CURL_OPT=-s

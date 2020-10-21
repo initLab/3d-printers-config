@@ -25,7 +25,7 @@ scp -r "root@$OCTOPRINT_HOST:/home/web/public/*" web/
 # streamer
 ssh "root@$OCTOPRINT_HOST" "crontab -u streamer -l | grep -v '^#'" > streamer/cron.txt
 scp -r "root@$OCTOPRINT_HOST":/home/streamer/start.sh streamer/
-scp -r "root@$OCTOPRINT_HOST":/home/streamer/snapshot-i3mega.sh streamer/
+scp -r "root@$OCTOPRINT_HOST":/home/streamer/snapshot.sh streamer/
 
 if [ $SANITIZE = 'y' ]; then
     # NOTE: this is very rudimentary and not exactly 100% accurate but gets the job done

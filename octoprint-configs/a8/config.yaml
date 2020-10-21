@@ -29,6 +29,8 @@ plugins:
         enabled_channels:
         - _important
     errortracking:
+    gcodeviewer:
+        _config_version: 1
     psucontrol:
         _config_version: 3
         disconnectOnPowerOff: true
@@ -44,9 +46,9 @@ plugins:
     slic3r:
         slic3r_engine: /usr/bin/slic3r-prusa3d
     softwareupdate:
-        _config_version: 7
+        _config_version: 8
     telegram:
-        _config_version: 4
+        _config_version: 5
         chats:
             '-1001214843381':
                 accept_commands: true
@@ -59,20 +61,16 @@ plugins:
                     /filament: false
                     /files: true
                     /gif: true
-                    /help: false
                     /print: false
                     /settings: false
                     /shutup: true
                     /status: true
                     /supergif: true
                     /sys: false
-                    /test: false
                     /togglepause: false
                     /tune: false
                     /upload: false
                     /user: true
-                    'No': false
-                    'Yes': false
                 id: '-1001214843381'
                 image: /plugin/telegram/img/static/group.jpg
                 new: false
@@ -88,6 +86,7 @@ plugins:
                     StatusNotPrinting: false
                     StatusPrinting: false
                     ZChange: true
+                    plugin_pause_for_user_event_notify: false
                 private: false
                 send_notifications: true
                 title: init Lab 3D Printing
@@ -103,20 +102,16 @@ plugins:
                     /filament: true
                     /files: true
                     /gif: true
-                    /help: false
                     /print: true
                     /settings: true
                     /shutup: true
                     /status: true
                     /supergif: true
                     /sys: true
-                    /test: false
                     /togglepause: true
                     /tune: true
                     /upload: true
                     /user: true
-                    'No': false
-                    'Yes': false
                 id: '102104618'
                 image: /plugin/telegram/img/static/default.jpg
                 new: false
@@ -132,10 +127,53 @@ plugins:
                     StatusNotPrinting: false
                     StatusPrinting: false
                     ZChange: false
+                    plugin_pause_for_user_event_notify: false
                 private: true
                 send_notifications: false
                 title: Венцислав - Атанасов - @Slackware
                 type: PRIVATE
+            '402093617':
+                accept_commands: true
+                allow_users: true
+                commands:
+                    /abort: true
+                    /con: true
+                    /ctrl: true
+                    /dontshutup: true
+                    /filament: true
+                    /files: true
+                    /gif: true
+                    /print: true
+                    /settings: true
+                    /shutup: true
+                    /status: true
+                    /supergif: true
+                    /sys: true
+                    /togglepause: true
+                    /tune: true
+                    /upload: true
+                    /user: true
+                id: '402093617'
+                image: /plugin/telegram/img/static/default.jpg
+                new: false
+                newUsr: false
+                notifications:
+                    PrintDone: false
+                    PrintFailed: false
+                    PrintPaused: false
+                    PrintResumed: false
+                    PrintStarted: false
+                    PrinterShutdown: false
+                    PrinterStart: false
+                    StatusNotPrinting: false
+                    StatusPrinting: false
+                    ZChange: false
+                    plugin_pause_for_user_event_notify: false
+                private: true
+                send_notifications: false
+                title: 'T - T - '
+                type: PRIVATE
+        debug: true
         messages:
             StatusPrinting:
                 combined: true
@@ -165,8 +203,11 @@ plugins:
 printerProfiles:
     default: a8_-_init_lab
 serial:
+    additionalPorts:
+    - /dev/3dprinter-a8
     baudrate: 115200
-    port: /dev/ttyUSB-a8
+    blacklistedPorts:
+    - /dev/tty*
 server:
     commands:
         serverRestartCommand: ~/restart.sh &

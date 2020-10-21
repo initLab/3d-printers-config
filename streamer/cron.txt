@@ -1,4 +1,5 @@
 @reboot screen -dmS mendel /home/streamer/start.sh mendel --resolution 1024x768 --fps 30 --port 8080 -q 95
 @reboot screen -dmS a8 /home/streamer/start.sh a8 --fps 30 --port 8081 -q 95
 @reboot screen -dmS i3mega /home/streamer/start.sh i3mega --fps 30 --port 8082 -q 95
-@reboot screen -dmS snapshot-i3mega /home/streamer/snapshot-i3mega.sh
+@reboot screen -dmS snapshot-a8 /home/streamer/snapshot.sh 8081 a8
+@reboot screen -dmS snapshot-i3mega /home/streamer/snapshot.sh 8082 i3mega
