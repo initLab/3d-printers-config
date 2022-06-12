@@ -1,6 +1,6 @@
 # RepRap Mono Mendel - Logitech, Inc. Webcam C170
 KERNEL=="video[0-9]*", SUBSYSTEM=="video4linux", ATTR{index}=="0", ATTRS{idVendor}=="046d", ATTRS{idProduct}=="082b", SYMLINK+="video-mendel"
-# Anet A8 - Logitech, Inc. QuickCam Pro 5000
-KERNEL=="video[0-9]*", SUBSYSTEM=="video4linux", ATTR{index}=="0", ATTRS{idVendor}=="046d", ATTRS{idProduct}=="08ce", ATTRS{serial}=="47796C92", SYMLINK+="video-a8"
-# Anycube i3 Mega - Logitech, Inc. Webcam C200
-KERNEL=="video[0-9]*", SUBSYSTEM=="video4linux", ATTR{index}=="0", ATTRS{idVendor}=="046d", ATTRS{idProduct}=="0802", ATTRS{serial}=="6A03A370", SYMLINK+="video-i3mega"
+# Anet A8 - Logitech, Inc. Webcam C200
+KERNEL=="video[0-9]*", SUBSYSTEM=="video4linux", ATTR{index}=="0", ATTRS{idVendor}=="046d", ATTRS{idProduct}=="0802", ATTRS{serial}=="6A03A370", SYMLINK+="video-a8"
+# Anycube i3 Mega - Logitech, Inc. Webcam C270
+KERNEL=="video[0-9]*", SUBSYSTEM=="video4linux", ATTR{index}=="0", ATTRS{idVendor}=="046d", ATTRS{idProduct}=="0825", ATTRS{serial}=="3132D5A0", SYMLINK+="video-i3mega"
